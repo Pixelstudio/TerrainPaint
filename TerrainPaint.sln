@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+
+Project("{755533A9-3869-F781-599F-7D16195F05BE}") = "TerrainPaint", "TerrainPaint.csproj", "{20C03503-905C-D95C-8005-30DBCC44DC68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20C03503-905C-D95C-8005-30DBCC44DC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C03503-905C-D95C-8005-30DBCC44DC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C03503-905C-D95C-8005-30DBCC44DC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C03503-905C-D95C-8005-30DBCC44DC68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	
+EndGlobal
