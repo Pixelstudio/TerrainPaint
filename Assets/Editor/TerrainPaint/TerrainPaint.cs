@@ -252,6 +252,9 @@ public class TerrainPaint : Editor
 	private void UpdatePreviewBrush()
     {
 		TerrainScript targetScript = ((TerrainScript) target);
+		if (previewMesh == null)
+			return;
+		
 		if (targetScript.treePrototypes.Count >0)
 			previewMesh.UpdatePreviewMesh(targetScript.terrainData.treeInstances, targetScript.treePrototypes[0].prefab.renderer.bounds.size.y);
 		
