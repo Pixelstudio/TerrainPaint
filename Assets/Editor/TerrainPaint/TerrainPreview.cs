@@ -53,7 +53,10 @@ public class TerrainPreview
 	public void UpdatePreviewMesh(List<MyTreeInstance> treeInstances, float size) {
 		if ((!changed)|| (previewMesh==null))
 			return;
-		
+			
+		if (previewMesh.GetComponent<MeshFilter>() == null)
+			previewMesh.AddComponent<MeshFilter>();
+
 		Mesh mesh = previewMesh.GetComponent<MeshFilter>().sharedMesh;
 		if (mesh == null)
 			mesh = new Mesh();
@@ -116,8 +119,6 @@ public class TerrainPreview
 		Material m = new Material(previewShader);
 		
 		Texture2D preview = EditorUtility.GetAssetPreview(prefab);
-		if (preview == null)
-			return null;
 		Color background = preview.GetPixel(0,0);
 		for (int x = 0; x < preview.width; x++) {
 			for (int y = 0; y < preview.height; y++) {
