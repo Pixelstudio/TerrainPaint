@@ -119,16 +119,26 @@ public class TerrainPreview
 		Material m = new Material(previewShader);
 		
 		Texture2D preview = EditorUtility.GetAssetPreview(prefab);
-		Color background = preview.GetPixel(0,0);
-		for (int x = 0; x < preview.width; x++) {
-			for (int y = 0; y < preview.height; y++) {
-				Color c = preview.GetPixel(x,y);
-				if (c == background) {
-					preview.SetPixel(x,y, new Color(c.r,c.g,c.b,0));
+		if (preview != null) {
+			Color background = preview.GetPixel(0,0);
+			for (int x = 0; x < preview.width; x++) {
+				for (int y = 0; y < preview.height; y++) {
+					Color c = preview.GetPixel(x,y);
+					if (c == background) {
+						preview.SetPixel(x,y, new Color(c.r,c.g,c.b,0));
+					}
+				}
+			}
+			preview.Apply();
+		} else {
+			preview = new Texture2D(256,256);
+			for (int x = 0; x < preview.width; x++) {
+				for (int y = 0; y < preview.height; y++) {
+					Color c = Color.gray;
+					preview.SetPixel(x,y, new Color(c.r,c.g,c.b,0));	
 				}
 			}
 		}
-		preview.Apply();
 		m.mainTexture = preview;
 		
 		previewMesh.AddComponent<MeshFilter>();
