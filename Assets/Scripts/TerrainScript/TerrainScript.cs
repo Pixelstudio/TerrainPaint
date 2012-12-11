@@ -47,11 +47,7 @@ public class TerrainScript : MonoBehaviour {
 	public TData terrainData;
 	
 	void Start() {
-		if (treePrototypes != null) {
-			foreach (MyTreePrototype prototype in treePrototypes) {
-				prototype.prefab.GetComponent<LOD>().CreateLODMeshes();	
-			}
-		}
+		
 		if (terrainData != null) {
 			foreach (MyTreeInstance t in terrainData.treeInstances) {
 				GameObject newObj = (GameObject) GameObject.Instantiate(treePrototypes[t.prototypeIndex].prefab,t.position,Quaternion.identity );
